@@ -23,16 +23,16 @@ Analyze the user's input before acting.
 * If the code is **5xx**, read `references/http-status-codes.md` (Server Errors).
 * If non-code failures exist (Network/DNS), read `references/common-api-failures.md`.
 
-## Phase 2: Analysis & Hypothesis
+## Phase 3: Analysis & Hypothesis
 Based on the classification, formulate a hypothesis.
 * *Strict Rule:* Do not guess. If the error is ambiguous, state "Insufficient Evidence."
 
-## Phase 3: Anti-Patterns (The "Anti-Patterns" List)
+## Phase 4: Anti-Patterns (The "Anti-Patterns" List)
 * **Security:** NEVER suggest outputting or rotating API Keys/Secrets in the chat.
 * **Flooding:** NEVER suggest a "tight loop" retry (e.g., "try again every 1 second"). Always suggest Exponential Backoff.
 * **Blindness:** NEVER suggest "Check the server logs" if the error is clearly client-side (400/401).
 
-## Phase 4: Output Format
+## Phase 5: Output Format
 Return the diagnosis in strict JSON format.
 
 ```json
